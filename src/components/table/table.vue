@@ -168,7 +168,10 @@
             loading: {
                 type: Boolean,
                 default: false
-            }
+            },
+			 onHover:{
+				type:Function
+			}
         },
         data () {
             return {
@@ -381,6 +384,7 @@
                 if (this.disabledHover) return;
                 if (this.objData[_index]._isHover) return;
                 this.objData[_index]._isHover = true;
+				this.onHover(this.objData[_index])
             },
             handleMouseOut (_index) {
                 if (this.disabledHover) return;
